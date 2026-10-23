@@ -1,0 +1,27 @@
+@startuml
+
+class Notas {
+    - lista_notas : list
+    + __init__()
+    + establecer_nota(indice, nota)
+    + calcular_promedio() : float
+    + calcular_desviacion() : float
+    + calcular_menor() : float
+    + calcular_mayor() : float
+}
+
+class VentanaPrincipal {
+    - root : Tk
+    - campos : list
+    - promedio : Label
+    - desviacion : Label
+    - mayor : Label
+    - menor : Label
+    + __init__(root)
+    + calcular()
+    + limpiar()
+}
+
+VentanaPrincipal --> Notas : usa
+
+@enduml
