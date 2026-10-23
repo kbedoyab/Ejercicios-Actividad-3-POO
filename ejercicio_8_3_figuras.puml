@@ -1,0 +1,57 @@
+@startuml
+
+abstract class FiguraGeometrica {
+    - volumen : float
+    - superficie : float
+    + get_volumen() : float
+    + get_superficie() : float
+    + calcular_volumen()
+    + calcular_superficie()
+}
+
+class Cilindro {
+    - radio : float
+    - altura : float
+    + __init__(radio, altura)
+    + calcular_volumen() : float
+    + calcular_superficie() : float
+}
+
+class Esfera {
+    - radio : float
+    + __init__(radio)
+    + calcular_volumen() : float
+    + calcular_superficie() : float
+}
+
+class Piramide {
+    - base : float
+    - altura : float
+    - apotema : float
+    + __init__(base, altura, apotema)
+    + calcular_volumen() : float
+    + calcular_superficie() : float
+}
+
+class Cubo {
+    - lado : float
+    + __init__(lado)
+    + calcular_volumen() : float
+    + calcular_superficie() : float
+}
+
+class Prisma {
+    - base : float
+    - altura : float
+    + __init__(base, altura)
+    + calcular_volumen() : float
+    + calcular_superficie() : float
+}
+
+FiguraGeometrica <|-- Cilindro
+FiguraGeometrica <|-- Esfera
+FiguraGeometrica <|-- Piramide
+FiguraGeometrica <|-- Cubo
+FiguraGeometrica <|-- Prisma
+
+@enduml
